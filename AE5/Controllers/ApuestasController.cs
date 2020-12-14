@@ -22,13 +22,15 @@ namespace AE5.Controllers
         public Apuesta Get(int id)
         {
             var repo = new ApuestasRepository();
-             Apuesta apuesta = repo.retireveId(id);
+             Apuesta apuesta = repo.re(id);
             return apuesta;
         }
 
         // POST: api/Apuestas
-        public void Post([FromBody]string value)
+        public void Post([FromBody]Apuesta a )
         {
+            var repo = new ApuestasRepository();
+            repo.Save(a);
         }
 
         // PUT: api/Apuestas/5

@@ -30,5 +30,12 @@ namespace AE5.Models
             }
                  
         }
+        public void Save(Mercado m)
+        {
+            PlaceMyBetContext context = new PlaceMyBetContext();
+            context.Mercado.Add(m);
+            context.SaveChanges();
+
+        }
     }
 }
