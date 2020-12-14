@@ -32,13 +32,17 @@ namespace AE5.Controllers
         }
 
         // PUT: api/Eventos/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, string eLocal, string eVisitante)
         {
+            var repo = new EventosRepository();
+            repo.updateEventos(id, eLocal, eVisitante);
         }
 
         // DELETE: api/Eventos/5
         public void Delete(int id)
         {
+            var repo = new EventosRepository();
+            repo.deleteEventos(id);
         }
     }
 }

@@ -27,6 +27,27 @@ namespace AE5.Models
 
         }
 
+        public void updateEventos(int id, string eLocal, string eVisitante)
+        {
+            Evento evento;
+            PlaceMyBetContext context = new PlaceMyBetContext();
+            evento = context.Evento.FirstOrDefault(a => a.EventoId == id);
+
+            evento.EquipoLocal = eLocal;
+            evento.EquipoVisitante = eVisitante;
+
+            context.SaveChanges();
+        }
+
+        public void deleteEventos (int id)
+        {
+            Evento evento;
+            PlaceMyBetContext context = new PlaceMyBetContext();
+            evento = context.Evento.FirstOrDefault(a => a.EventoId == id);
+
+            context.Remove(evento);
+            context.SaveChanges();
+        }
      
     }
 }

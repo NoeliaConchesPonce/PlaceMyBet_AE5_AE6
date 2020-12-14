@@ -5,16 +5,17 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using static AE5.Models.Apuesta;
 
 namespace AE5.Controllers
 {
     public class ApuestasController : ApiController
     {
         // GET: api/Apuestas
-        public IEnumerable<Apuesta> Get()
+        public IEnumerable<ApuestasDTO> Get()
         {
             var repo = new ApuestasRepository();
-            List<Apuesta> apuestas = repo.retrieve();
+            List<ApuestasDTO> apuestas = repo.retrieveDTO();
             return apuestas;
         }
 

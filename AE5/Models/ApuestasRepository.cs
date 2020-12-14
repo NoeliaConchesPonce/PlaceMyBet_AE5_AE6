@@ -67,7 +67,7 @@ namespace AE5.Models
 
         public static ApuestasDTO ToDTO( Apuesta a)
         {
-            return new ApuestasDTO (a.UsuarioId, a.EventoId, a.TipoApuesta, a.Cuota, a.DineroApuesta, a.mercado)
+            return new ApuestasDTO(a.UsuarioId, a.EventoId, a.TipoApuesta, a.Cuota, a.DineroApuesta, a.mercado);
         }
 
         internal List<ApuestasDTO> retrieveDTO()

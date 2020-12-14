@@ -9,11 +9,11 @@ namespace AE5.Models
     {
         /*Tenemos la apuesta sin relaciones*/
         public int ApuestaId { get; set; }
-        public double OverUnder  { get; set; }
+        public double OverUnder { get; set; }
         public string TipoApuesta { get; set; }
-        public double Cuota  { get; set; }
+        public double Cuota { get; set; }
         public double DineroApuesta { get; set; }
-        public DateTime Fecha  { get; set; }
+        public DateTime Fecha { get; set; }
 
         /*hasta aqui*/
 
@@ -46,6 +46,7 @@ namespace AE5.Models
         public Apuesta()
         {
         }
+    }
 
         public class ApuestasDTO
         {
@@ -71,4 +72,3 @@ namespace AE5.Models
             }
         }
     }
-}
