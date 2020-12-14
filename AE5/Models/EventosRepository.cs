@@ -18,5 +18,13 @@ namespace AE5.Models
             }
             return eventos;
         }
+
+        public void Save (Evento e)
+        {
+            PlaceMyBetContext context = new PlaceMyBetContext();
+            context.Evento.Add(e);
+            context.SaveChanges();
+
+        }
     }
 }
