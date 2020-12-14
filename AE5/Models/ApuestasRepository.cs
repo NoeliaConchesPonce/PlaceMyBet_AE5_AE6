@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,7 +14,7 @@ namespace AE5.Models
             List<Apuesta> apuestas;
             using (PlaceMyBetContext context = new PlaceMyBetContext())
             {
-                apuestas = context.Apuesta.ToList();
+                apuestas = context.Apuesta.Include(a => a.mercado).ToList();
 
             }
             return apuestas;
