@@ -22,7 +22,7 @@ namespace AE5.Controllers
         public Apuesta Get(int id)
         {
             var repo = new ApuestasRepository();
-             Apuesta apuesta = repo.re(id);
+             Apuesta apuesta = repo.retireveId(id);
             return apuesta;
         }
 
