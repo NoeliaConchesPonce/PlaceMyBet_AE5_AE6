@@ -39,12 +39,12 @@ namespace AE5.Models
 
         /**/
         protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {/*
+        {
             modelBuilder.Entity<Evento>().HasData(new Evento(1, "Valencia", "Barcelona", DateTime.Now));
             modelBuilder.Entity<Mercado>().HasData(new Mercado(1000, 1.5, 1.9, 1.9, 50, 50, 1));
-            modelBuilder.Entity<Usuario>().HasData(new Usuario("usuario1@gmail.com", "Alex", "Bernal", 19));
-            modelBuilder.Entity<Apuesta>().HasData(new Apuesta(12, 1.5, "over", 1.9, 20, DateTime.Now, 1, "usuario1@gmail.com", 1000));
-            modelBuilder.Entity<Cuenta>().HasData(new Cuenta(120.32, "BBVA", "123456789", "usuario1@gmail.com"));
-        */}
+            modelBuilder.Entity<Usuario>().HasData(new Usuario("usuario1@gmail.com", "Noelia", "Conches", 21));
+            modelBuilder.Entity<Apuesta>().HasData(new Apuesta(12, 1.5, "over", 1.9, 20, DateTime.Now, 1, 1000, "usuario1@gmail.com"));
+            modelBuilder.Entity<Cuenta>().HasData(new Cuenta("12345678", "BBVA", 360.25, "usuario1@gmail.com"));
+        }
     }
 }

@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AE5.Migrations
 {
     [DbContext(typeof(PlaceMyBetContext))]
-    [Migration("20201214171954_m1")]
+    [Migration("20201214173145_m1")]
     partial class m1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -56,6 +56,20 @@ namespace AE5.Migrations
                     b.HasIndex("UsuarioId");
 
                     b.ToTable("Apuesta");
+
+                    b.HasData(
+                        new
+                        {
+                            ApuestaId = 12,
+                            Cuota = 1.8999999999999999,
+                            DineroApuesta = 20.0,
+                            EventoId = 1,
+                            Fecha = new DateTime(2020, 12, 14, 18, 31, 45, 312, DateTimeKind.Local).AddTicks(1493),
+                            MercadoId = 1000,
+                            OverUnder = 1.5,
+                            TipoApuesta = "over",
+                            UsuarioId = "usuario1@gmail.com"
+                        });
                 });
 
             modelBuilder.Entity("AE5.Models.Cuenta", b =>
@@ -78,6 +92,15 @@ namespace AE5.Migrations
                         .IsUnique();
 
                     b.ToTable("Cuenta");
+
+                    b.HasData(
+                        new
+                        {
+                            CuentaId = "12345678",
+                            Nombre = "BBVA",
+                            Saldo = 360.25,
+                            UsuarioId = "usuario1@gmail.com"
+                        });
                 });
 
             modelBuilder.Entity("AE5.Models.Evento", b =>
@@ -98,6 +121,15 @@ namespace AE5.Migrations
                     b.HasKey("EventoId");
 
                     b.ToTable("Evento");
+
+                    b.HasData(
+                        new
+                        {
+                            EventoId = 1,
+                            EquipoLocal = "Valencia",
+                            EquipoVisitante = "Barcelona",
+                            Fecha = new DateTime(2020, 12, 14, 18, 31, 45, 308, DateTimeKind.Local).AddTicks(1606)
+                        });
                 });
 
             modelBuilder.Entity("AE5.Models.Mercado", b =>
@@ -129,6 +161,18 @@ namespace AE5.Migrations
                     b.HasIndex("EventoId");
 
                     b.ToTable("Mercado");
+
+                    b.HasData(
+                        new
+                        {
+                            MercadoId = 1000,
+                            CuotaOver = 1.8999999999999999,
+                            CuotaUnder = 1.8999999999999999,
+                            DineroOver = 50.0,
+                            DineroUnder = 50.0,
+                            EventoId = 1,
+                            OverUnder = 1.5
+                        });
                 });
 
             modelBuilder.Entity("AE5.Models.Usuario", b =>
@@ -148,6 +192,15 @@ namespace AE5.Migrations
                     b.HasKey("UsuarioId");
 
                     b.ToTable("Usuario");
+
+                    b.HasData(
+                        new
+                        {
+                            UsuarioId = "usuario1@gmail.com",
+                            Apellido = "Conches",
+                            Edad = 21,
+                            Nombre = "Noelia"
+                        });
                 });
 
             modelBuilder.Entity("AE5.Models.Apuesta", b =>

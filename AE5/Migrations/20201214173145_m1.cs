@@ -113,6 +113,31 @@ namespace AE5.Migrations
                         onDelete: ReferentialAction.Restrict);
                 });
 
+            migrationBuilder.InsertData(
+                table: "Evento",
+                columns: new[] { "EventoId", "EquipoLocal", "EquipoVisitante", "Fecha" },
+                values: new object[] { 1, "Valencia", "Barcelona", new DateTime(2020, 12, 14, 18, 31, 45, 308, DateTimeKind.Local).AddTicks(1606) });
+
+            migrationBuilder.InsertData(
+                table: "Usuario",
+                columns: new[] { "UsuarioId", "Apellido", "Edad", "Nombre" },
+                values: new object[] { "usuario1@gmail.com", "Conches", 21, "Noelia" });
+
+            migrationBuilder.InsertData(
+                table: "Cuenta",
+                columns: new[] { "CuentaId", "Nombre", "Saldo", "UsuarioId" },
+                values: new object[] { "12345678", "BBVA", 360.25, "usuario1@gmail.com" });
+
+            migrationBuilder.InsertData(
+                table: "Mercado",
+                columns: new[] { "MercadoId", "CuotaOver", "CuotaUnder", "DineroOver", "DineroUnder", "EventoId", "OverUnder" },
+                values: new object[] { 1000, 1.8999999999999999, 1.8999999999999999, 50.0, 50.0, 1, 1.5 });
+
+            migrationBuilder.InsertData(
+                table: "Apuesta",
+                columns: new[] { "ApuestaId", "Cuota", "DineroApuesta", "EventoId", "Fecha", "MercadoId", "OverUnder", "TipoApuesta", "UsuarioId" },
+                values: new object[] { 12, 1.8999999999999999, 20.0, 1, new DateTime(2020, 12, 14, 18, 31, 45, 312, DateTimeKind.Local).AddTicks(1493), 1000, 1.5, "over", "usuario1@gmail.com" });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Apuesta_MercadoId",
                 table: "Apuesta",

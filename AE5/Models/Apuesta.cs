@@ -29,5 +29,22 @@ namespace AE5.Models
 
         public Usuario usuario { get; set; }
 
+        //hacempos constrcutores sin mercado y usuario y uno vacio
+        public Apuesta(int apuestaId, double overUnder, string tipoApuesta, double cuota, double dineroApuesta, DateTime fecha, int eventoId, int mercadoId, string usuarioId)
+        {
+            ApuestaId = apuestaId;
+            OverUnder = overUnder;
+            TipoApuesta = tipoApuesta;
+            Cuota = cuota;
+            DineroApuesta = dineroApuesta;
+            Fecha = fecha;
+            EventoId = eventoId;
+            MercadoId = mercadoId;
+            UsuarioId = usuarioId;
+        }
+
+        public Apuesta()
+        {
+        }
     }
 }

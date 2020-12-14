@@ -19,5 +19,18 @@ namespace AE5.Models
 
         /*relacionar un usuario con una cuenta*/
         public Cuenta cuenta { get; set; }
+
+        //constructor menos cuenta y apuestas
+        public Usuario(string usuarioId, string nombre, string apellido, int edad)
+        {
+            UsuarioId = usuarioId;
+            Nombre = nombre;
+            Apellido = apellido;
+            Edad = edad;
+        }
+
+        public Usuario()
+        {
+        }
     }
 }

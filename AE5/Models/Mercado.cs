@@ -22,6 +22,20 @@ namespace AE5.Models
         /*un mercado puede hacer muchas apuestas*/
         List<Apuesta> apuestas { get; set; }
 
+        //sin apuestas y evento
+        public Mercado(int mercadoId, double overUnder, double cuotaOver, double cuotaUnder, double dineroOver, double dineroUnder, int eventoId)
+        {
+            MercadoId = mercadoId;
+            OverUnder = overUnder;
+            CuotaOver = cuotaOver;
+            CuotaUnder = cuotaUnder;
+            DineroOver = dineroOver;
+            DineroUnder = dineroUnder;
+            EventoId = eventoId;
+        }
 
+        public Mercado()
+        {
+        }
     }
 }
