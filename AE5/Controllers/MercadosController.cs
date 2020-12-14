@@ -11,10 +11,10 @@ namespace AE5.Controllers
     public class MercadosController : ApiController
     {
         // GET: api/Mercados
-        public IEnumerable<Mercado> Get()
+        public IEnumerable<MercadoDTO> Get()
         {
             var repo = new MercadosRepository();
-            List<Mercado> mercados = repo.retrieve();
+            List<MercadoDTO> mercados = repo.retrieveDTO();
             return mercados;
         }
 

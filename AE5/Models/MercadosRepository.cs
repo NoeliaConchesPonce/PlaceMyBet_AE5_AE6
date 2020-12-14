@@ -37,5 +37,21 @@ namespace AE5.Models
             context.SaveChanges();
 
         }
+
+        public static MercadoDTO ToDTO(Mercado m)
+        {
+            return new MercadoDTO(m.OverUnder, m.CuotaOver, m.CuotaUnder);
+        }
+        public List<MercadoDTO> retrieveDTO()
+        {
+            List<MercadoDTO> mercados;
+            using (PlaceMyBetContext context = new PlaceMyBetContext())
+            {
+                mercados = context.Mercado.Select(m => ToDTO(m)).ToList();
+
+            }
+            return mercados;
+        }
+
     }
 }

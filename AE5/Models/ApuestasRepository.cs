@@ -64,5 +64,22 @@ namespace AE5.Models
             context.Apuesta.Add(a);
             context.SaveChanges();
         }
+
+        public static ApuestasDTO ToDTO( Apuesta a)
+        {
+            return new ApuestasDTO (a.UsuarioId, a.EventoId, a.TipoApuesta, a.Cuota, a.DineroApuesta, a.mercado)
+        }
+
+        internal List<ApuestasDTO> retrieveDTO()
+        {
+            List<ApuestasDTO> apuestas = new List<ApuestasDTO>();
+            using (PlaceMyBetContext context = new PlaceMyBetContext())
+            {
+                apuestas = context.Apuesta.Include(e => e.mercado).Select(p => ToDTO(p)).ToList();
+
+            }
+
+            return apuestas;
+        }
     }
 }

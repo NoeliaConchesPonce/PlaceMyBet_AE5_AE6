@@ -315,6 +315,7 @@
     <Compile Include="Models\EventosRepository.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Mercado.cs" />
+    <Compile Include="Models\MercadoDTO.cs" />
     <Compile Include="Models\MercadosRepository.cs" />
     <Compile Include="Models\PlaceMyBetContext.cs" />
     <Compile Include="Models\Usuario.cs" />

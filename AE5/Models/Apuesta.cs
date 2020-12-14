@@ -46,5 +46,29 @@ namespace AE5.Models
         public Apuesta()
         {
         }
+
+        public class ApuestasDTO
+        {
+            public string UsuarioId { get; set; }
+            public int EventoId { get; set; }
+            public string tipoApuesta { get; set; }
+            public double cuota  { get; set; }
+            public double dineroApuesta  { get; set; }
+            public Mercado Mercado  { get; set; }
+
+            public ApuestasDTO(string usuarioId, int eventoId, string tipoApuesta, double cuota, double dineroApuesta, Mercado mercado)
+            {
+                UsuarioId = usuarioId;
+                EventoId = eventoId;
+                this.tipoApuesta = tipoApuesta;
+                this.cuota = cuota;
+                this.dineroApuesta = dineroApuesta;
+                Mercado = mercado;
+            }
+
+            public ApuestasDTO()
+            {
+            }
+        }
     }
 }
